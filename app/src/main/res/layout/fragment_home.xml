@@ -7,9 +7,12 @@
     android:background="@color/colorPrimary"
     tools:context="com.example.cceventsadminapp.fragments.HomeFragment">
 
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
+
+
+
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -87,9 +90,29 @@
                 android:layout_height="0dp"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintTop_toBottomOf="@id/text_pastEvents"
+                tools:layout_editor_absoluteX="-31dp"
                 tools:listitem="@layout/past_event_item" />
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.core.widget.NestedScrollView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <ImageView
+            android:id="@+id/addbutton"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:clickable="true"
+            app:tint="@color/white"></ImageView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
