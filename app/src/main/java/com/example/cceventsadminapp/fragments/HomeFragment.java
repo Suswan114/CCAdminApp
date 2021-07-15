@@ -4,15 +4,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.cceventsadminapp.adapters.UpcomingEventAdapter;
+import com.example.cceventsadminapp.addDialog;
 import com.example.cceventsadminapp.data.Utils;
 import com.example.cceventsadminapp.data.models.Event;
 import com.example.cceventsadminapp.R;
@@ -23,10 +26,11 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment{
     List<Event> eventList;
     ViewPager viewPager;
     RecyclerView pastRecyclerView;
+    ImageView addButton;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -57,6 +61,14 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        addButton= getView().findViewById(R.id.addbutton);
+        addButton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                openAddDialog();
+            }
+        });
         initUpcomingEvents();
         initPastEvents();
     }
@@ -79,6 +91,10 @@ public class HomeFragment extends Fragment {
         pastRecyclerView = getView().findViewById(R.id.pastRecyclerView);
         pastRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         pastRecyclerView.setAdapter(new PastEventAdapter(pastEventList));
+    }
+    public void openAddDialog(){
+        addDialog AddDialog=new addDialog();
+        AddDialog.show( getChildFragmentManager(), "dialog");
     }
 
 }
