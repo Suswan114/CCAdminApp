@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_20sdp"
+    app:cardCornerRadius="@dimen/_20sdp"
+    android:background="@color/deepBlue"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventNameTitle"
+            android:text="EVENT NAME"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            ></TextView>
+        <EditText
+            android:id="@+id/eventName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventNameTitle"
+            android:layout_marginTop="@dimen/_10sdp"></EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventLocationTitle"
+            android:text="EVENT LOCATION"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventName"
+            android:layout_marginTop="@dimen/_10sdp"
+            ></TextView>
+        <EditText
+            android:id="@+id/eventLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Event Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventLocationTitle"
+            android:layout_marginTop="@dimen/_10sdp"></EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventDateTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventLocation"
+            android:text="ENTER EVENT DATE"
+            android:textSize="20sp"
+            android:fontFamily="@font/inter_bold"></TextView>
+        <EditText
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventDateTitle"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:hint="dd/mm/yyyy"></EditText>
+        <ImageView
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:id="@+id/calenderImage"
+            app:layout_constraintTop_toBottomOf="@+id/eventDateTitle"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toEndOf="@+id/eventDate"
+           android:layout_marginStart="@dimen/_25sdp"
+            android:src="@drawable/calender"
+            android:clickable="true"
+            app:tint="@color/white"></ImageView>
+</androidx.constraintlayout.widget.ConstraintLayout>
