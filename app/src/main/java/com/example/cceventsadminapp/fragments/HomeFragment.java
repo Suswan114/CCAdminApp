@@ -26,16 +26,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment{
+public class HomeFragment extends Fragment implements addDialog.OnInputSelected{
     List<Event> eventList;
     ViewPager viewPager;
     RecyclerView pastRecyclerView;
     ImageView addButton;
-
     public HomeFragment() {
         // Required empty public constructor
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +65,9 @@ public class HomeFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 openAddDialog();
+
             }
+
         });
         initUpcomingEvents();
         initPastEvents();
@@ -94,7 +94,12 @@ public class HomeFragment extends Fragment{
     }
     public void openAddDialog(){
         addDialog AddDialog=new addDialog();
+        AddDialog.setTargetFragment(HomeFragment.this,132);
         AddDialog.show( getChildFragmentManager(), "dialog");
     }
 
+    @Override
+    public void sendInput(String Input) {
+        eventList.add(new Event(Input, "", "1665018184", R.drawable.laptop));
+    }
 }

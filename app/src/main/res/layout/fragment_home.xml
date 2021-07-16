@@ -90,7 +90,7 @@
                 android:layout_height="0dp"
                 android:nestedScrollingEnabled="false"
                 app:layout_constraintTop_toBottomOf="@id/text_pastEvents"
-                tools:layout_editor_absoluteX="-31dp"
+                tools:layout_editor_absoluteX="-94dp"
                 tools:listitem="@layout/past_event_item" />
 
 
@@ -106,13 +106,12 @@
             android:id="@+id/addbutton"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
-            android:src="@drawable/add"
+            android:src="@drawable/plus_sign"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/_25sdp"
             android:layout_marginEnd="@dimen/_15sdp"
-            android:clickable="true"
-            app:tint="@color/white"></ImageView>
+            android:clickable="true"></ImageView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
